@@ -69,8 +69,8 @@ jobs:
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
 
-          docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
-          docker push $IMAGE_ID:$VERSION
+          # docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
+          # docker push $IMAGE_ID:$VERSION
 
           echo "${{ secrets.QUAY_WRITE_ROBOT_PW }}" | docker login quay.io -u ${{ secrets.QUAY_WRITE_ROBOT_NAME }} --password-stdin
 
