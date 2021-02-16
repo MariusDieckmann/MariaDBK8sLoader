@@ -6,5 +6,6 @@ RUN apk -U upgrade
 RUN apk --update add mariadb-client
 
 COPY run.sh .
+RUN chmod 755 run.sh
 
 ENTRYPOINT ["/bin/sh", "-c", "./run.sh"]
