@@ -1,2 +1,2 @@
-curl -K $SQLDUMP_DL_LINK -o Spike.sql
+curl -o Spike.sql $SQLDUMP_DL_LINK
 mysql --user $MYSQL_USERNAME --password $MYSQL_PASSWORD --host $SQL_HOST < Spike.sql
