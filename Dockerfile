@@ -1,9 +1,9 @@
-FROM alpine
+FROM ubuntu
 
 LABEL maintainer Marius Dieckmann <m.die0123@gmail.com>
 
-RUN apk -U upgrade
-RUN apk --update add mysql-client wget
+RUN apt-get -y update && apt-get -y upgrade
+RUN apt-get -y install wget mysql-client
 
 COPY run.sh .
 RUN chmod 755 run.sh
