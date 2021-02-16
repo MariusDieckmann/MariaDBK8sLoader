@@ -7,4 +7,4 @@ RUN apk --update add mariadb-client
 
 COPY run.sh .
 
-ENTRYPOINT ["run.sh"]
+ENTRYPOINT ["/bin/bash", "-c", "run.sh"]
