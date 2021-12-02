@@ -1,5 +1,7 @@
-wget -O Spike.sql $SPIKE_SQLDUMP_DL_LINK
-wget -O RKIPublic.sql $RKIPublic_SQLDUMP_DL_LINK
+#!/bin/bash
+set -e
+wget -O Spike.sql -q -T 10 --tries 3 $SPIKE_SQLDUMP_DL_LINK
+wget -O RKIPublic.sql -q -T 10 --tries 3 $RKIPublic_SQLDUMP_DL_LINK
 sed -i Spike.sql -e 's/utf8mb4_0900_ai_ci/utf8mb4_unicode_ci/g'
 sed -i RKIPublic.sql -e 's/utf8mb4_0900_ai_ci/utf8mb4_unicode_ci/g'
 mysql --user $MYSQL_USERNAME --host $SQL_HOST -e "DROP DATABASE IF EXISTS Spike"
