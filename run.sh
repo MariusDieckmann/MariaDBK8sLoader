@@ -1,5 +1,7 @@
 #!/bin/bash
 set -e
+# Small sleep to give the K8s time to recognize ready status
+sleep 5
 # TRAP last command to get a proper stdout/log entry for failed command.
 trap 'LAST_COMMAND=$CURRENT_COMMAND; CURRENT_COMMAND=$BASH_COMMAND' DEBUG
 trap 'ERROR_CODE=$?; FAILED_COMMAND=$LAST_COMMAND; echo "error: command \"$FAILED_COMMAND\" failed with exit code $ERROR_CODE"' ERR INT TERM
