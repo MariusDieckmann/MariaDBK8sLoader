@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -ex
 # Small sleep to give the K8s time to recognize ready status
 sleep 5
 # TRAP last command to get a proper stdout/log entry for failed command.
